@@ -12,7 +12,9 @@
   ],
   "author": "TimA11y",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "json2csv": "^4.3.3"
+  },
   "dependencies": {
     "puppeteer": "^1.12.1"
   }

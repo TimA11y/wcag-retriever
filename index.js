@@ -3,11 +3,11 @@
 
 // Initialize Modules
 const fs = require("fs");
-const os = require("os");
+const CSVParser = require("json2csv").Parser;
 const puppeteer = require("puppeteer");
 
 async function runPuppeteer () {
-  const browser = await puppeteer.launch({dumpio: true});
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto("https://www.w3.org/tr/wcag/");
   await page.waitFor(1000);
@@ -37,14 +37,12 @@ async function runPuppeteer () {
   return results;
 } // end runPuppeteer.
 
+console.log("Fetching success criteria...");
 runPuppeteer().then((results) => {
-  let output = `title,level,link${os.EOL}`;
-  for (let item of results) {
-    output += `${item.title},${item.level},${item.link}${os.EOL}`;
-  } // end for.
-  fs.writeFile("sc.csv", output, "utf8", () => {
-    console.log("*** sc.csv saved ***");
+  const fields = ["title", "level", "link"];
+  const parser = new CSVParser({fields});
+  const data = parser.parse(results);
+  fs.writeFile("sc.csv", data, "utf8", () => {
+    console.log("All done!  The results were written to sc.csv");
   });
-});
-
-
+}); // end runPuppeteer.
