@@ -1,0 +1,19 @@
+{
+  "name": "wcag-retrieve",
+  "version": "0.1.0",
+  "description": "Retrieves infromation from the WCAG 2.1 spec.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wcag",
+    "retrieve"
+  ],
+  "author": "TimA11y",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "puppeteer": "^1.12.1"
+  }
+}
