@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "Retrieves infromation from the WCAG 2.1 spec.",
   "main": "index.js",
-  'bin': {
-    'wcag-retriever': './index.js'
+  "bin": {
+    "wcag-retriever": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,9 +15,9 @@
   ],
   "author": "TimA11y",
   "license": "MIT",
-  'repository': {
-    'type': 'git',
-    'url': 'https://github.com/TimA11y/wcag-retriever'
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TimA11y/wcag-retriever"
   },
   "devDependencies": {
     "json2csv": "^4.3.3"
